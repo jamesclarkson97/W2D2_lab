@@ -8,7 +8,15 @@ require_relative("../person")
 class PersonTest < MiniTest::Test
 
     def setup()
-        @person = Person.new("Ruby", 21)
+        @person = Person.new("Rudy", 21)
+    end
+
+    def test_has_name()
+        assert_equal("Rudy", @person.name())
+    end
+
+    def test_has_age()
+        assert_equal(21, @person.age())
     end
 
 end
