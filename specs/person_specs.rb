@@ -7,4 +7,8 @@ require_relative("../person")
 
 class PersonTest < MiniTest::Test
 
+    def setup()
+        @person = Person.new("Ruby", 21)
+    end
+
 end
