@@ -16,5 +16,12 @@ class Bus
         @passengers.push(new_passenger)
     end
 
+    def drop_off(passenger_1)
+        @passengers.delete(passenger_1)
+    end
+
+    def empty()
+        @passengers = []
+    end
         
 end
