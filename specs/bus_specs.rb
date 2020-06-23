@@ -3,12 +3,13 @@ require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative("../bus")
-
+require_relative("../person")
 
 class BusTest < MiniTest::Test
 
     def setup()
         @bus = Bus.new(22, "Ocean Terminal")
+        @person = Person.new("Donald", 30)
     end
 
     def test_drive()
@@ -23,6 +24,12 @@ class BusTest < MiniTest::Test
         assert_equal("Ocean Terminal", @bus.destination)
     end
 
-    
+    def test_passenger_array()
+        assert_equal([], @bus.passengers)
+    end
+
+    def test_pick_up()
+        assert_equal([@person], @bus.pick_up(@person))
+    end
 
 end
